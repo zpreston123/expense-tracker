@@ -17,6 +17,6 @@ const contextReducer = (state, action) => {
 		default:
 			return state;
 	}
-}
+};
 
 export default contextReducer;

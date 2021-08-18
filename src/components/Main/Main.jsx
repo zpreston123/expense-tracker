@@ -31,6 +31,6 @@ const Main = () => {
 			</CardContent>
 		</Card>
 	);
-}
+};
 
 export default Main;

@@ -18,6 +18,6 @@ const Details = ({ title }) => {
 			</CardContent>
 		</Card>
 	);
-}
+};
 
 export default Details;

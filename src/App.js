@@ -15,7 +15,7 @@ const App = () => {
 	const executeScroll = () => main.current.scrollIntoView();
 
 	useEffect(() => {
-		if(speechState === SpeechState.Recording) {
+		if (speechState === SpeechState.Recording) {
 			executeScroll();
 		}
 	}, [speechState]);
@@ -42,6 +42,6 @@ const App = () => {
 			</PushToTalkButtonContainer>
 		</div>
 	);
-}
+};
 
 export default App;

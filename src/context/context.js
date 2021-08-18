@@ -24,4 +24,4 @@ export const Provider = ({ children }) => {
 			{children}
 		</ExpenseTrackerContext.Provider>
 	);
-}
+};

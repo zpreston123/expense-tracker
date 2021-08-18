@@ -14,7 +14,7 @@ const initialState = {
 	category: '',
 	type: 'Income',
 	date: formatDate(new Date()),
-}
+};
 
 const Form = () => {
 	const classes = useStyles();
@@ -31,17 +31,17 @@ const Form = () => {
 		setOpen(true);
 		addTransaction(transaction);
 		setFormData(initialState);
-	}
+	};
 
 	useEffect(() => {
-		if(segment) {
-			if(segment.intent.intent === 'add_expense') {
+		if (segment) {
+			if (segment.intent.intent === 'add_expense') {
 				setFormData({ ...formData, type: 'Expense' });
-			} else if(segment.intent.intent === 'add_income') {
+			} else if (segment.intent.intent === 'add_income') {
 				setFormData({ ...formData, type: 'Income' });
-			} else if(segment.isFinal && segment.intent.intent === 'create_transaction') {
+			} else if (segment.isFinal && segment.intent.intent === 'create_transaction') {
 				return createTransaction();
-			} else if(segment.isFinal && segment.intent.intent === 'cancel_transaction') {
+			} else if (segment.isFinal && segment.intent.intent === 'cancel_transaction') {
 				return setFormData(initialState);
 			}
 
@@ -53,9 +53,9 @@ const Form = () => {
 						setFormData({ ...formData, amount: e.value });
 						break;
 					case 'category':
-						if(incomeCategories.map((iC) => iC.type).includes(category)) {
+						if (incomeCategories.map((iC) => iC.type).includes(category)) {
 							setFormData({ ...formData, type: 'Income', category });
-						} else if(expenseCategories.map((iC) => iC.type).includes(category)) {
+						} else if (expenseCategories.map((iC) => iC.type).includes(category)) {
 							setFormData({ ...formData, type: 'Expense', category });
 						}
 						break;
@@ -67,7 +67,7 @@ const Form = () => {
 				}
 			});
 
-			if(segment.isFinal && formData.amount && formData.category && formData.type && formData.date) {
+			if (segment.isFinal && formData.amount && formData.category && formData.type && formData.date) {
 				createTransaction();
 			}
 		}
@@ -108,7 +108,7 @@ const Form = () => {
 			</Grid>
 			<Button className={classes.button} variant="outlined" color="primary" fullWidth onClick={createTransaction}>Create</Button>
 		</Grid>
-	)
-}
+	);
+};
 
-export default Form
+export default Form;

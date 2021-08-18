@@ -12,6 +12,6 @@ const InfoCard = () => {
 			for {isIncome ? 'Monday ' : 'Tuesday '}
 		</div>
 	);
-}
+};
 
 export default InfoCard;

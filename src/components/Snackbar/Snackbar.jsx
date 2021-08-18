@@ -8,10 +8,10 @@ const CustomizedSnackbar = ({ open, setOpen }) => {
 	const classes = useStyles();
 
 	const handleClose = (event, reason) => {
-		if(reason === 'clickaway') return;
+		if (reason === 'clickaway') return;
 
 		setOpen(false);
-	}
+	};
 
 	return (
 		<div className={classes.root}>
@@ -27,6 +27,6 @@ const CustomizedSnackbar = ({ open, setOpen }) => {
 			</Snackbar>
 		</div>
 	);
-}
+};
 
 export default CustomizedSnackbar;
